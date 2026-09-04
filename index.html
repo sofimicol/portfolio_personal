@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Instrucción para el navegador que le dice que sistema de codificación de caracteres usar -->
+    <meta charset="UTF-8">
+
+    <!-- (Diseño Responsive) width=device-width: adapta al ancho real del dispositivo. initial-scale=1.0 sin zoom automático -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title data-i18n="doc-title">Portfolio | Sofia Micol Añazgo</title>
+
+    <!-- Preconexión a Google Fonts para acelerar la carga -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Carga de fuentes desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Preload y hoja de estilos principal -->
+    <link rel="preload" href="css/style_portfolio.css">
+    <link rel="stylesheet" href="css/style_portfolio.css">
+</head>
+
+<body> 
+    <header id="home" class="site-header">
+        <!-- NAVBAR -->
+        <nav class="navbar" aria-label="Navegación principal" data-i18n-aria="nav-aria-label"> 
+            <div class="container nav-inner">
+                <!-- Menú -->
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#home" data-i18n="nav-inicio">Inicio</a></li> 
+                    <li><a href="#sobre-mi" data-i18n="nav-sobre">Sobre mí</a></li>
+                    <li><a href="#formacion" data-i18n="nav-formacion">Formación</a></li>
+                    <li><a href="#contacto" data-i18n="nav-contacto">Contacto</a></li>
+                </ul>
+                <!-- Botones EN + Luna -->
+                <div class="header-actions">
+                    <button class="lang-toggle" type="button" aria-label="Cambiar de idioma" data-i18n-aria="lang-toggle-aria" data-i18n="lang-btn">EN</button>
+                    
+                    <button class="theme-toggle" type="button" aria-label="Cambiar tema" data-i18n-aria="theme-toggle-aria">
+                        <!-- Luna -->
+                        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                             stroke-linecap="round" stroke-linejoin="round">
+                             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <!-- Sol -->
+                        <svg class="icon-sun" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                             stroke-linecap="round" stroke-linejoin="round">
+                             <circle cx="12" cy="12" r="5"></circle>
+                             <line x1="12" y1="1" x2="12" y2="3"></line>
+                             <line x1="12" y1="21" x2="12" y2="23"></line>
+                             <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                             <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                             <line x1="1" y1="12" x2="3" y2="12"></line>
+                             <line x1="21" y1="12" x2="23" y2="12"></line>
+                             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div class="header-info">
+            <h2 data-i18n="header-portfolio">PORTFOLIO PERSONAL</h2>
+            <h1 class="nombre" data-i18n="header-nombre">Sofia Micol Añazgo</h1>
+            <p data-i18n-html="header-subtitulo"><em>Estudiante de Licenciatura en Análisis de Sistemas</em></p>
+
+            <div class="header-buttons">
+                <a href="#sobre-mi" class="btn-block" data-i18n="header-btn-sobre">Sobre mi</a>
+                <a href="#contacto" class="btn-block" data-i18n="header-btn-contacto">Contacto</a>
+            </div>
+        </div>
+
+        <div class="foto-grid">
+            <img src="img/foto_sofi.png" alt="Foto de Sofía Micol Añazgo" data-i18n-alt="header-foto-alt">
+        </div>
+    </header>
+
+    <main>
+        <section id="sobre-mi" class="section-about">
+            <div class="container">
+                <!-- Título -->
+                <h2 class="section-title" data-i18n="sobre-titulo">Sobre mí</h2>
+
+                <!-- Introducción -->
+                <div class="about-intro">
+                    <p data-i18n-html="sobre-intro">Soy estudiante de la <strong>Licenciatura en Análisis de Sistemas</strong> con un enfoque en Inteligencia Artificial.</p>
+                </div>
+
+                <!-- Frase destacada -->
+                <blockquote class="about-quote" data-i18n="sobre-quote">
+                    "Mi enfoque está en comprender cómo los agentes de IA interpretan nuestras instrucciones, cómo razonan detrás de cada respuesta y cómo pueden actuar de manera autónoma sin supervisión absoluta, manteniendo coherencia, seguridad y utilidad en sus decisiones."
+                </blockquote>
+
+                <!-- Intereses (grid de bloques) -->
+                <div class="interests-grid">
+                    <div class="interest-item">
+                        <h3 data-i18n="interes-1-titulo">Desarrollo Web</h3>
+                        <p data-i18n="interes-1-desc">Creación de aplicaciones y sitios web funcionales.</p>
+                    </div>
+                    <div class="interest-item">
+                        <h3 data-i18n="interes-2-titulo">Bases de datos</h3>
+                        <p data-i18n="interes-2-desc">Diseño y optimización de almacenamiento de datos.</p>
+                    </div>
+                    <div class="interest-item">
+                        <h3 data-i18n="interes-3-titulo">Inteligencia Artificial</h3>
+                        <p data-i18n="interes-3-desc">Modelos de ML, LLMs y agentes autónomos.</p>
+                    </div>
+                    <div class="interest-item">
+                        <h3 data-i18n="interes-4-titulo">Automatización</h3>
+                        <p data-i18n="interes-4-desc">Optimización de procesos con soluciones inteligentes.</p>
+                    </div>
+                    <div class="interest-item">
+                        <h3 data-i18n="interes-5-titulo">Machine Learning</h3>
+                        <p data-i18n="interes-5-desc">Algoritmos y predicción basada en datos.</p>
+                    </div>
+                    <div class="interest-item">
+                        <h3 data-i18n="interes-6-titulo">Análisis de datos</h3>
+                        <p data-i18n="interes-6-desc">Extracción de insights para la toma de decisiones.</p>
+                    </div>
+                    <div class="interest-item">
+                        <h3 data-i18n="interes-7-titulo">UX / Producto</h3>
+                        <p data-i18n="interes-7-desc">Experiencia de usuario y desarrollo de productos digitales.</p>
+                    </div>
+                    <div class="interest-item">
+                        <h3 data-i18n="interes-8-titulo">Comunicación digital</h3>
+                        <p data-i18n="interes-8-desc">Contenido, redes y difusión tecnológica.</p>
+                    </div>
+                </div>
+            </div> <!-- Cierre container -->
+        </section> <!-- Cierre section sobre-mi -->
+
+        <!-- Tabla de formación -->
+        <section id="formacion" class="section-formacion">
+            <div class="container formacion-layout">
+                <!-- COLUMNA IZQUIERDA -->
+                <div class="formacion-left">
+                    <h2 class="section-title-left" data-i18n="formacion-titulo">Estudiante en constante aprendizaje</h2>
+                    <p class="formacion-subtitle" data-i18n="formacion-subtitulo">Siempre buscando expandir mis conocimientos en IA, desarrollo y tecnología.</p>
+                    
+                    <!-- ICONOS SOCIALES -->
+                    <div class="formacion-socials">
+                        <a href="https://www.linkedin.com/in/sofia-micol-a%C3%B1azgo-6905a9424/" target="_blank" class="social-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            <span data-i18n="social-linkedin">LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/sofimicol" target="_blank" class="social-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            <span data-i18n="social-github">GitHub</span>
+                        </a>
+                    </div>
+                </div> 
+
+                <!-- COLUMNA DERECHA -->
+                <div class="formacion-right">
+                    <div class="formacion-list">
+                        <!-- Tarjeta 1 -->
+                        <a href="#tabla-licenciatura" class="edu-card">
+                            <div class="edu-card-header">
+                                <div>
+                                    <div class="edu-header">
+                                        <span class="edu-institution" data-i18n="edu-1-institucion">UNSa</span>
+                                        <span class="edu-status" data-i18n="edu-estado-curso">En curso</span>
+                                    </div>
+                                    <h3 class="edu-title" data-i18n="edu-1-titulo">Licenciatura en Análisis de Sistemas</h3>
+                                    <span class="edu-date" data-i18n="edu-1-fecha">2024 - Presente</span>
+                                </div>
+                                <div class="arrow-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Tarjeta 2 -->
+                        <a href="#tabla-tecnicatura" class="edu-card">
+                            <div class="edu-card-header">
+                                <div>
+                                    <div class="edu-header">
+                                        <span class="edu-institution" data-i18n="edu-2-institucion">UPATECO</span>
+                                        <span class="edu-status" data-i18n="edu-estado-curso">En curso</span>
+                                    </div>
+                                    <h3 class="edu-title" data-i18n="edu-2-titulo">Tecnicatura Universitaria en ML e IA</h3>
+                                    <span class="edu-date" data-i18n="edu-2-fecha">2025 - Presente</span>
+                                </div>
+                                <div class="arrow-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="10" y1="20" x2="20" y2="10"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                                </div>
+                            </div>
+                        </a> 
+
+                        <!-- Tarjeta 3 -->
+                        <div class="edu-card">
+                            <div class="edu-card-header">
+                                <div>
+                                    <div class="edu-header">
+                                        <span class="edu-institution" data-i18n="edu-3-institucion">Formación Complementaria</span>
+                                        <span class="edu-status" data-i18n="edu-estado-finalizado">Finalizado</span>
+                                    </div>
+                                    <h3 class="edu-title" data-i18n="edu-3-titulo">Video Marketing: Edición para Emprender</h3>
+                                    <span class="edu-date" data-i18n="edu-3-fecha">Ago 2025 - Oct 2025</span>
+                                </div>
+                                <div class="arrow-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 4 -->
+                        <div class="edu-card">
+                            <div class="edu-card-header">
+                                <div>
+                                    <div class="edu-header">
+                                        <span class="edu-institution" data-i18n="edu-4-institucion">Dept. Informática - UNSa</span>
+                                        <span class="edu-status" data-i18n="edu-estado-certificados">Certificados</span>
+                                    </div>
+                                    <h3 class="edu-title" data-i18n="edu-4-titulo">Jornadas y Talleres de Especialización</h3>
+                                    <span class="edu-date" data-i18n="edu-4-fecha">2024 - 2025</span>
+                                </div>
+                                <div class="arrow-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                                </div>
+                            </div>
+                            <ul class="edu-details">
+                                <li data-i18n="edu-4-item-1">Introducción a la Ciencia de Datos (2025)</li>
+                                <li data-i18n="edu-4-item-2">Taller: Preprocesamiento de Datos para ML en Python (2024)</li>
+                                <li data-i18n="edu-4-item-3">Taller: ¿Cómo funciona GPT? (2024)</li>
+                                <li data-i18n="edu-4-item-4">Taller: Aspectos Legales de la IA (2024)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- SEPARADOR (con clase) -->
+                    <div class="separador-materias">
+                        <div></div>
+                        <h3 data-i18n="separador-materias">Materias cursadas hasta hoy</h3>
+                        <div></div>
+                    </div>
+
+                    <!-- TABLA 1: LICENCIATURA -->
+                    <table border="1" id="tabla-licenciatura">
+                        <caption data-i18n="tabla-lic-caption">Licenciatura en Análisis de Sistemas</caption>
+                        <thead> 
+                            <tr>
+                                <th data-i18n="tabla-th-materia">Materia</th>
+                                <th data-i18n="tabla-th-ano">Año</th>
+                                <th data-i18n="tabla-th-estado">Estado</th>
+                            </tr>
+                        </thead> 
+                        <tbody>
+                            <tr><td data-i18n="lic-1-materia">Elementos de Programacion</td><td data-i18n="lic-1-ano">2024</td><td data-i18n="estado-aprobada">Aprobada</td></tr>
+                            <tr><td data-i18n="lic-2-materia">Matematica para Informatica</td><td data-i18n="lic-2-ano">2024</td><td data-i18n="estado-aprobada">Aprobada</td></tr>
+                            <tr><td data-i18n="lic-3-materia">Analisis Matematico</td><td data-i18n="lic-3-ano">2024</td><td data-i18n="estado-aprobada">Aprobada</td></tr>
+                            <tr><td data-i18n="lic-4-materia">Programacion</td><td data-i18n="lic-4-ano">2024</td><td data-i18n="estado-aprobada">Aprobada</td></tr>
+                            <tr><td data-i18n="lic-5-materia">Algebra Lineal y Geometria Analitica</td><td data-i18n="lic-5-ano">2024</td><td data-i18n="estado-aprobada">Aprobada</td></tr>
+                            <tr><td data-i18n="lic-6-materia">Algoritmos y Estructura de Datos</td><td data-i18n="lic-6-ano">2025</td><td data-i18n="estado-aprobada">Aprobada</td></tr>
+                            <tr><td data-i18n="lic-7-materia">Paradigmas y Lenguajes</td><td data-i18n="lic-7-ano">2025</td><td data-i18n="estado-aprobada">Aprobada</td></tr>
+                            <tr><td data-i18n="lic-8-materia">Analisis Matematico II</td><td data-i18n="lic-8-ano">2026</td><td data-i18n="estado-aprobada">Aprobada</td></tr>
+                            <tr><td data-i18n="lic-9-materia">Analisis Matematico II</td><td data-i18n="lic-9-ano">2026</td><td data-i18n="estado-cursada">Cursada</td></tr>
+                        </tbody>
+                        <tr class="fila-total">
+                            <td data-i18n-html="lic-total"><strong>Total de materias:</strong></td>
+                            <td colspan="2" class="total-num"><strong>8</strong></td>
+                        </tr>
+                    </table>
+
+                    <!-- TABLA 2: TECNICATURA -->
+                    <table border="1" id="tabla-tecnicatura" style="margin-top: 4rem;">
+                        <caption data-i18n="tabla-tec-caption">Tecnicatura Universitaria en ML e IA</caption>
+                        <thead> 
+                            <tr>
+                                <th data-i18n="tabla-th-materia">Materia</th>
+                                <th data-i18n="tabla-th-ano">Año</th>
+                                <th data-i18n="tabla-th-estado">Estado</th>
+                            </tr>
+                        </thead> 
+                        <tbody>
+                            <tr><td data-i18n="tec-1-materia">Matemática para IA</td><td data-i18n="tec-1-ano">2026</td><td data-i18n="estado-aprobada">Aprobada</td></tr>
+                            <tr><td data-i18n-html="tec-2-materia">Programación I <br>(Python y estructuras)</td><td data-i18n="tec-2-ano">2026</td><td data-i18n="estado-aprobada">Aprobada</td></tr>
+                            <tr><td data-i18n-html="tec-3-materia">Alfabetización Académica y <br>Comunicación Técnica</td><td data-i18n="tec-3-ano">2026</td><td data-i18n="estado-aprobada">Aprobada</td></tr>
+                            <tr><td data-i18n="tec-4-materia">Introducción a la Transformación Digital</td><td data-i18n="tec-4-ano">2026</td><td data-i18n="estado-aprobada">Aprobada</td></tr>
+                        </tbody>
+                        <tr class="fila-total">
+                            <td data-i18n-html="tec-total"><strong>Total de materias:</strong></td>
+                            <td colspan="2" class="total-num"><strong>4</strong></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="section-contacto">
+            <div class="container">
+                <h2 class="section-title" data-i18n="nav-contacto">Contacto</h2>
+                <div class="contact-grid">
+                    <!-- COLUMNA IZQUIERDA -->
+                    <div class="contact-info">
+                        <p><strong data-i18n="contact-titulo">Hablemos</strong></p>
+                        <p data-i18n="contact-disponible">Estoy disponible para colaboraciones, proyectos freelance y trabajos remotos.</p>
+                        <p data-i18n="contact-medios">Podés contactarme directamente por estos medios:</p>
+                        
+                        <ul class="contact-list">
+                            <li>
+                                <strong data-i18n="contact-telefono-label">Teléfono:</strong>
+                                <div class="data-with-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 -960 960 960" width="22px" fill="var(--color-morado)"><path d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z"/></svg>
+                                    <span>+54 9 5</span>
+                                </div>
+                            </li>
+                            <li>
+                                <strong data-i18n="contact-email-label">Email:</strong>
+                                <div class="data-with-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 -960 960 960" width="22px" fill="var(--color-morado)"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg>
+                                    <span>so</span>
+                                </div>
+                            </li>
+                            <li>
+                                <strong data-i18n="contact-ubicacion-label">Ubicación:</strong>
+                                <div class="data-with-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 -960 960 960" width="22px" fill="var(--color-morado)"><path d="M536.5-503.5Q560-527 560-560t-23.5-56.5Q513-640 480-640t-56.5 23.5Q400-593 400-560t23.5 56.5Q447-480 480-480t56.5-23.5ZM480-186q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"/></svg>
+                                    <span data-i18n="contact-ubicacion-valor">Salta, Argentina</span>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <!-- Redes sociales -->
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/sofia-micol-a%C3%B1azgo-6905a9424/" target="_blank" class="social-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                                <span data-i18n="social-linkedin">LinkedIn</span>
+                            </a>
+                            <a href="https://github.com/sofimicol" target="_blank" class="social-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                <span data-i18n="social-github">GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- COLUMNA DERECHA (FORMULARIO) -->
+                    <div class="contact-form-wrapper">
+                        <form id="contact-form" action="#" method="post">  
+                            <label for="nombre" data-i18n="contact-nombre">Nombre</label> 
+                            <div class="input-group">
+                                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" data-i18n-ph="contact-nombre-ph" required>
+                            </div>
+
+                            <label for="correo" data-i18n="contact-email">Email</label> 
+                            <input type="email" id="correo" name="email" placeholder="you@gmail.com" data-i18n-ph="contact-email-ph" required>  
+                            
+                            <label for="mensaje" data-i18n="contact-mensaje">Mensaje</label> 
+                            <div class="input-group input-group-textarea">
+                                <textarea id="mensaje" name="mensaje" placeholder="Contame brevemente en qué te puedo ayudar" data-i18n-ph="contact-mensaje-ph" rows="5" required></textarea>
+                            </div> 
+
+                            <button type="submit" class="btn" data-i18n="contact-btn">Enviar mensaje</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <p data-i18n-html="footer-texto"><em>Sofía Micol Añazgo — IA aplicada, automatización y contenido digital</em></p>
+            <p data-i18n="footer-copy">© 2026 Sofía Micol Añazgo</p>
+            <a href="#home" class="back-to-top" aria-label="Volver arriba">Volver arriba</a>
+        </footer>
+    </main>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- Tu archivo JS normal -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

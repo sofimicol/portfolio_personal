@@ -1,0 +1,1287 @@
+/* ==========================================
+   MÓDULO 3 Y 4: PORTAFOLIO RESPONSIVE
+   Estrategia: Mobile -> Tablet -> Desktop)
+   ========================================== */
+
+/* ==========================================
+   1. VARIABLES CSS Y RESET
+   ========================================== */
+:root {
+    --color-fondo: #e5e5e5;
+    --color-texto: #0f0f0f;
+    --color-secundario: #4a4a4a;
+    --color-primario: #005f73;
+    --color-morado: #7b2cbf;
+    --color-cuadrado: #cfcfcf;
+    --fuente-principal: 'Poppins', sans-serif;
+    --color-blanco: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   2. ESTILOS BASE (Mobile-First)
+   ========================================== */
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.5;
+    padding-top: 0px;
+    overflow-x: hidden;
+}
+
+/* ==========================================
+   3. HEADER: ESTRUCTURA PRINCIPAL
+   ========================================== */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.site-header {
+    position: relative;
+    background-color: var(--color-fondo);
+    padding-bottom: 0rem;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* ==========================================
+   4. NAVEGACIÓN (BARRA SUPERIOR) - BASE
+   ========================================== */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--color-fondo);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    padding: 1.2rem 5%;
+    width: 100%;
+}
+
+.nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+    flex-shrink: 1;
+    flex-wrap: wrap;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.90rem;
+    padding: 0.5rem 0;
+    white-space: nowrap;
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(to right, var(--color-morado) 50%, var(--color-secundario) 50%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: background-position 0.4s ease;
+}
+
+.nav-menu li a.active {
+    background-position: 0 0;
+}
+
+.nav-menu li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-morado);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-out;
+}
+
+.nav-menu li a:hover {
+    background-position: 0 0;
+}
+
+.nav-menu li a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Botones de la derecha (idioma y luna) - base */
+.lang-toggle,
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background: transparent;
+    border: 2px solid var(--color-morado);
+    color: var(--color-morado);
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+.lang-toggle {
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.lang-toggle:hover,
+.theme-toggle:hover {
+    background: var(--color-morado);
+    color: var(--color-blanco);
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   5. HERO: INFORMACIÓN PRINCIPAL + IMAGEN
+   ========================================== */
+.header-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    max-width: 600px;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.header-info h2 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-texto);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    align-self: flex-start;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.header-info h1 {
+    font-size: 4.2rem;
+    line-height: 1.2;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    word-break: break-word;
+}
+
+.header-info p em {
+    font-style: normal;
+    color: var(--color-secundario);
+    font-size: 1.3rem;
+    display: block;
+    text-align: center;
+}
+
+.foto-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 280px;
+    margin: 2rem auto 0;
+}
+
+.foto-grid img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 20px;
+    background-color: var(--color-cuadrado);
+    border: 4px solid var(--color-texto);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.foto-grid img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+/* ==========================================
+   6. BOTONES DEL HERO
+   ========================================== */
+.header-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.header-buttons a {
+    display: inline-block;
+    padding: 12px 28px;
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: 700;
+    border: 2px solid var(--color-morado);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background: transparent;
+    transition: color 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.header-buttons a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: var(--color-morado);
+    z-index: -1;
+    transition: height 0.4s ease;
+}
+
+.header-buttons a:hover {
+    color: var(--color-blanco);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(123, 44, 191, 0.4);
+}
+
+.header-buttons a:hover::before {
+    height: 100%;
+}
+
+/* ==========================================
+   7. SECCIÓN SOBRE MÍ (Mobile-First)
+   ========================================== */
+.section-about {
+    padding: 3rem 0;
+    background-color: var(--color-fondo);
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-texto);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-morado);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+.about-intro {
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-secundario);
+}
+
+.about-intro strong {
+    color: var(--color-morado);
+}
+
+.about-quote {
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    padding: 1.5rem 2rem;
+    background: rgba(123, 44, 191, 0.08);
+    border-left: 4px solid var(--color-morado);
+    border-radius: 0 12px 12px 0;
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-texto);
+    text-align: left;
+}
+
+.interests-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.interest-item {
+    background-color: #ffffff;
+    padding: 1.5rem 1.2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(123, 44, 191, 0.1);
+}
+
+.interest-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(123, 44, 191, 0.12);
+}
+
+.interest-item h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-texto);
+    margin-bottom: 0.3rem;
+}
+
+.interest-item p {
+    font-size: 0.85rem;
+    color: var(--color-secundario);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* ==========================================
+   8. SECCIÓN FORMACIÓN (CARDS Y TABLA)
+   ========================================== */
+.section-formacion {
+    padding: 3rem 0;
+    background-color: var(--color-fondo);
+}
+
+.edu-card {
+    background-color: var(--color-blanco);
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.edu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.edu-institution {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-secundario);
+}
+
+.edu-status {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: rgba(0, 95, 115, 0.1);
+    color: var(--color-primario);
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.edu-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-texto);
+    margin-bottom: 0.3rem;
+    line-height: 1.3;
+}
+
+.edu-date {
+    font-size: 0.8rem;
+    color: var(--color-secundario);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.edu-details {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+    flex-grow: 1;
+}
+
+.edu-details li {
+    font-size: 0.85rem;
+    color: var(--color-secundario);
+    padding-left: 1.2rem;
+    position: relative;
+    margin-bottom: 0.4rem;
+    line-height: 1.4;
+}
+
+.edu-details li::before {
+    content: '•';
+    color: var(--color-morado);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* ---- Tabla moderna ---- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+    margin-top: 1.5rem;
+    background-color: var(--color-blanco);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+caption {
+    font-size: 0.95rem;
+    color: var(--color-secundario);
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: 0.8rem;
+    caption-side: top;
+}
+
+thead th {
+    background-color: rgba(0, 95, 115, 0.05);
+    color: var(--color-primario);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 2px solid var(--color-morado);
+}
+
+tbody td {
+    padding: 0.9rem 1rem;
+    font-size: 0.9rem;
+    color: var(--color-texto);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+tbody td:first-child {
+    font-weight: 500;
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgba(123, 44, 191, 0.02);
+}
+
+tbody tr:hover {
+    background-color: rgba(123, 44, 191, 0.06);
+}
+
+tbody td:nth-child(3) {
+    font-weight: 600;
+    color: var(--color-secundario);
+}
+
+.fila-total td {
+    font-weight: 600;
+    padding: 1rem;
+    border-top: 2px solid var(--color-texto);
+}
+
+.total-num {
+    text-align: center;
+}
+
+/* ==========================================
+   9. SECCIÓN CONTACTO
+   ========================================== */
+.section-contacto {
+    padding: 3rem 0;
+    background-color: var(--color-fondo);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-top: 1rem;
+}
+
+.contact-info p strong {
+    font-size: 2rem;
+    color: var(--color-texto);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info p {
+    color: var(--color-secundario);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.contact-info p:last-of-type {
+    margin-bottom: 2rem;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-list li strong {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-morado);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.2rem;
+}
+
+.contact-list li {
+    font-size: 1.05rem;
+    color: var(--color-texto);
+    font-weight: 500;
+}
+
+.social-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.social-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--color-texto);
+    transition: color 0.3s, transform 0.2s;
+}
+
+.social-item:hover {
+    color: var(--color-morado);
+    transform: translateY(-3px);
+}
+
+.social-item svg {
+    width: 28px;
+    height: 28px;
+}
+
+.social-item span {
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.contact-form-wrapper form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-form-wrapper label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-secundario);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form-wrapper input {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-bottom: 2px solid var(--color-cuadrado);
+    background-color: transparent;
+    font-family: var(--fuente-principal);
+    font-size: 1rem;
+    color: var(--color-texto);
+    transition: border-color 0.3s ease;
+}
+
+.contact-form-wrapper input:focus {
+    outline: none;
+    border-bottom-color: var(--color-morado);
+}
+
+.contact-form-wrapper textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--color-cuadrado);
+    border-radius: 8px;
+    background-color: transparent;
+    font-family: var(--fuente-principal);
+    font-size: 1rem;
+    color: var(--color-texto);
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form-wrapper textarea:focus {
+    outline: none;
+    border-color: var(--color-morado);
+}
+
+.contact-form-wrapper .btn {
+    align-self: flex-start;
+    padding: 12px 30px;
+    background-color: var(--color-morado);
+    color: var(--color-blanco);
+    border: 2px solid var(--color-morado);
+    border-radius: 8px;
+    font-family: var(--fuente-principal);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-form-wrapper .btn:hover {
+    background-color: transparent;
+    color: var(--color-morado);
+    transform: translateY(-3px);
+}
+
+/* ==========================================
+   10. FOOTER
+   ========================================== */
+.site-footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    color: var(--color-secundario);
+    font-size: 0.85rem;
+    background-color: var(--color-fondo);
+}
+
+.site-footer p {
+    margin-bottom: 0.3rem;
+}
+
+.back-to-top {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--color-morado);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.back-to-top:hover {
+    color: var(--color-secundario);
+}
+
+/* ==========================================
+   11. ANIMACIÓN DE APARICIÓN SECUENCIAL
+   ========================================== */
+.header-info h2,
+.header-info h1.nombre,
+.header-info p,
+.header-buttons,
+.foto-grid img {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+@keyframes fadeSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header-info h2 {
+    animation: fadeSlideUp 0.8s ease-out 0.3s forwards;
+}
+.header-info h1.nombre {
+    animation: fadeSlideUp 0.8s ease-out 0.7s forwards;
+}
+.header-info p {
+    animation: fadeSlideUp 0.8s ease-out 1.1s forwards;
+}
+.header-buttons {
+    animation: fadeSlideUp 0.8s ease-out 1.4s forwards;
+}
+.foto-grid img {
+    animation: fadeSlideUp 1s ease-out 1.0s forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .header-info h2,
+    .header-info h1.nombre,
+    .header-info p,
+    .header-buttons,
+    .foto-grid img {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+}
+
+/* ==========================================
+   12. SEPARADOR DE MATERIAS
+   ========================================== */
+.separador-materias {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 4rem 0 2rem 0;
+}
+.separador-materias > div {
+    flex: 1;
+    height: 1px;
+    background-color: var(--color-cuadrado);
+}
+.separador-materias h3 {
+    font-size: 0.9rem;
+    color: var(--color-secundario);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+/* ==========================================
+   13. MENÚ HAMBURGUESA Y AJUSTES MÓVIL
+   ========================================== */
+/* Botón hamburguesa (oculto en desktop) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-texto);
+    border-radius: 2px;
+    transition: background 0.3s;
+}
+
+.menu-toggle:hover span {
+    background-color: var(--color-morado);
+}
+
+/* Contenedor de los tres botones a la derecha */
+.nav-actions-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+}
+
+/* Ajuste de los botones dentro del contenedor */
+.nav-actions-right .theme-toggle,
+.nav-actions-right .lang-toggle {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    border-radius: 30px;
+    border: 2px solid var(--color-morado);
+    background: transparent;
+    color: var(--color-morado);
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+.nav-actions-right .theme-toggle:hover,
+.nav-actions-right .lang-toggle:hover {
+    background: var(--color-morado);
+    color: var(--color-blanco);
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   14. MEDIA QUERY PARA MÓVIL (max-width: 767px)
+   ========================================== */
+@media (max-width: 767px) {
+    /* Mostrar botón hamburguesa */
+    .menu-toggle {
+        display: flex;
+    }
+
+   
+    .nav-actions-right {
+        justify-content: flex-end; /* Alinea todo a la derecha */
+        gap: 8px;
+    }
+    .menu-toggle {
+        order: 2; /* Último elemento visual, pegado a la derecha */
+    }
+    .lang-toggle,
+    .theme-toggle {
+        order: 1; /* Antes del hamburguesa */
+    }
+
+   
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-fondo);
+        padding: 1.5rem 0;
+        gap: 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        border-top: 1px solid rgba(0,0,0,0.05);
+        z-index: 999;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        text-align: center;
+        padding: 0.8rem 0;
+        border-bottom: 1px solid rgba(0,0,0,0.03);
+    }
+
+    .nav-menu li a {
+        font-size: 1.1rem;
+        padding: 0.5rem 1rem;
+        white-space: normal;
+        background: none;
+        color: var(--color-texto);
+        background-clip: unset;
+        -webkit-background-clip: unset;
+        transition: color 0.3s;
+    }
+
+    .nav-menu li a::after {
+        display: none;
+    }
+
+    .nav-menu li a:hover {
+        color: var(--color-morado);
+    }
+
+    /* Ajustes de la barra */
+    .nav-inner {
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        gap: 0;
+    }
+
+    /* --- REDUCCIÓN DEL TAMAÑO DEL NOMBRE PARA QUE LA IMAGEN SEA VISIBLE --- */
+    .header-info h1 {
+        font-size: 2.8rem; /* Tamaño más pequeño en móvil */
+    }
+
+    .header-info h2 {
+        margin-top: 1rem; /* Menos espacio arriba */
+    }
+
+    /* MEJORA DE LOS INTERESES: borde lateral morado */
+    .interest-item {
+        background-color: var(--color-blanco);
+        padding: 1rem 1.2rem 1rem 1.5rem;
+        border-left: 4px solid var(--color-morado);
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        text-align: left;
+    }
+
+    .interest-item h3 {
+        font-size: 1rem;
+        color: var(--color-texto);
+        margin-bottom: 0.2rem;
+    }
+
+    .interest-item p {
+        font-size: 0.9rem;
+        color: var(--color-secundario);
+    }
+}
+
+/* ==========================================
+   15. MEDIA QUERY PARA TABLET (min-width: 768px)
+   ========================================== */
+@media (min-width: 768px) {
+    .site-header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr;
+        gap: 0;
+        padding: 0 4%;
+        min-height: 100vh;
+        align-items: center;
+    }
+    .navbar {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        padding: 0 4%;
+    }
+    .header-content {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 2rem 0;
+    }
+    .header-info {
+        grid-column: 1;
+        text-align: left;
+        align-items: flex-start;
+        max-width: 100%;
+        padding: 0;
+    }
+    .foto-grid {
+        grid-column: 2;
+        justify-self: center;
+        max-width: 220px;
+        width: 100%;
+        margin: 0;
+    }
+    .foto-grid img {
+        aspect-ratio: 1 / 1.2;
+        object-fit: cover;
+    }
+    .header-info h1 {
+        font-size: 3.2rem;
+    }
+    .header-info p em {
+        font-size: 1.1rem;
+    }
+    .header-buttons {
+        justify-content: flex-start;
+    }
+
+    .interests-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem 2rem;
+    }
+    .interest-item {
+        border-left-width: 4px;
+        padding: 0.8rem 0 0.8rem 1.5rem;
+        background: transparent;
+        box-shadow: none;
+        border-radius: 0;
+        text-align: left;
+    }
+    .interest-item h3 {
+        font-size: 1rem;
+        color: var(--color-morado);
+        margin: 0 0 0.15rem 0;
+    }
+    .interest-item p {
+        font-size: 0.9rem;
+        color: var(--color-secundario);
+        margin: 0;
+    }
+
+    .formacion-layout {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 3rem;
+        align-items: start;
+    }
+    .formacion-left {
+        position: sticky;
+        top: 80px;
+    }
+    .section-title-left {
+        font-size: 2rem;
+    }
+    .formacion-subtitle {
+        font-size: 1rem;
+    }
+    .formacion-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+    .edu-card {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        padding: 2rem 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        border-radius: 0;
+        box-shadow: none;
+        background: transparent;
+        transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    .edu-card:hover {
+        transform: translateX(4px);
+    }
+    .edu-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+    .edu-title {
+        font-size: 1.2rem;
+        transition: color 0.3s ease;
+    }
+    .edu-card:hover .edu-title {
+        color: var(--color-morado);
+    }
+    .arrow-icon {
+        flex-shrink: 0;
+        color: var(--color-cuadrado);
+        transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), color 0.3s ease;
+    }
+    .edu-card:hover .arrow-icon {
+        transform: translate(4px, -4px);
+        color: var(--color-morado);
+    }
+    .edu-details {
+        margin-top: 1rem;
+        padding-left: 0;
+    }
+    .formacion-socials {
+        display: flex;
+        gap: 2.5rem;
+        margin-top: auto;
+        padding-top: 10rem;
+        border-top: 1px solid rgba(0,0,0,0.05);
+    }
+    .formacion-left .social-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--color-texto);
+        transition: color 0.3s, transform 0.2s;
+    }
+    .formacion-left .social-item:hover {
+        color: var(--color-morado);
+        transform: translateY(-3px);
+    }
+    .formacion-left .social-item svg {
+        width: 28px;
+        height: 28px;
+    }
+    .formacion-left .social-item span {
+        font-size: 0.7rem;
+        font-weight: 600;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: start;
+    }
+    .contact-info p strong {
+        font-size: 2.4rem;
+    }
+    .contact-list li {
+        font-size: 1.1rem;
+    }
+    .social-item svg {
+        width: 30px;
+        height: 30px;
+    }
+    .back-to-top {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        width: fit-content;
+    }
+}
+
+/* ==========================================
+   16. MEDIA QUERY PARA ESCRITORIO (min-width: 1024px)
+   ========================================== */
+@media (min-width: 1024px) {
+    .site-header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr;
+        gap: 0;
+        padding: 0 5%;
+        min-height: 100vh;
+        align-items: center;
+    }
+    .navbar {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 5%;
+    }
+    .nav-inner {
+        width: 100%;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .nav-menu {
+        justify-content: flex-end;
+        gap: 25px;
+        flex-shrink: 1;
+    }
+    .header-content {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem 0;
+    }
+    .header-info {
+        grid-column: 1;
+        text-align: left;
+        align-items: flex-start;
+        max-width: 100%;
+    }
+    .foto-grid {
+        grid-column: 2;
+        justify-self: center;
+        max-width: 270px;
+        width: 100%;
+    }
+    .header-info h1 {
+        font-size: 3.8rem;
+    }
+    .header-info p em {
+        font-size: 1.3rem;
+    }
+    .header-buttons {
+        justify-content: flex-start;
+    }
+
+    .interests-grid {
+        gap: 1.5rem 2.5rem;
+    }
+    .interest-item {
+        border-left-width: 4px;
+        padding: 0.8rem 0 0.8rem 1.5rem;
+    }
+    .interest-item h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.3rem;
+    }
+    .interest-item p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .section-formacion {
+        padding: 5rem 0;
+    }
+    .formacion-layout {
+        grid-template-columns: 1fr 1.5fr;
+        gap: 6rem;
+    }
+    .formacion-left {
+        position: sticky;
+        top: 100px;
+    }
+    .section-title-left {
+        font-size: 2.5rem;
+    }
+    .formacion-subtitle {
+        font-size: 1.1rem;
+    }
+    .edu-card {
+        padding: 2.5rem 0;
+    }
+    .edu-card:hover {
+        transform: translateX(6px);
+    }
+    .edu-card-header {
+        gap: 2rem;
+    }
+    .edu-title {
+        font-size: 1.4rem;
+    }
+    .formacion-socials {
+        padding-top: 20rem;
+    }
+    .formacion-left .social-item svg {
+        width: 32px;
+        height: 32px;
+    }
+    .formacion-left .social-item span {
+        font-size: 0.75rem;
+    }
+    #tabla-tecnicatura,
+    #tabla-licenciatura {
+        scroll-margin-top: 300px;
+    }
+
+    .section-contacto {
+        padding: 5rem 0;
+    }
+    .contact-grid {
+        grid-template-columns: 1fr 1.2fr;
+        gap: 6rem;
+        align-items: start;
+    }
+    .contact-info p strong {
+        font-size: 2.8rem;
+    }
+    .contact-list li {
+        font-size: 1.15rem;
+    }
+    .social-item svg {
+        width: 32px;
+        height: 32px;
+    }
+    .site-footer {
+        position: relative;
+    }
+    .back-to-top {
+        margin-left: 75rem;
+    }
+}
