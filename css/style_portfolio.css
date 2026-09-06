@@ -296,7 +296,10 @@ header {
     margin-bottom: 1.5rem;
     position: relative;
 }
-
+.header-info h1,
+.header-info p {
+    text-align: left;
+}
 .section-title::after {
     content: '';
     display: block;
@@ -850,7 +853,7 @@ tbody td:nth-child(3) {
         display: flex;
     }
 
-   
+    /* Orden: los botones (idioma y luna) quedan a la izquierda del hamburguesa */
     .nav-actions-right {
         justify-content: flex-end; /* Alinea todo a la derecha */
         gap: 8px;
@@ -863,7 +866,7 @@ tbody td:nth-child(3) {
         order: 1; /* Antes del hamburguesa */
     }
 
-   
+    /* Ocultar menú por defecto y mostrarlo como desplegable */
     .nav-menu {
         display: none;
         flex-direction: column;
@@ -1177,6 +1180,10 @@ tbody td:nth-child(3) {
         align-items: center;
         gap: 2rem;
         padding: 2rem 0;
+    }
+     .header-info h1,
+    .header-info p {
+        text-align: left;
     }
     .header-info {
         grid-column: 1;
